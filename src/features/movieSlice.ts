@@ -1,37 +1,39 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+// import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface MovieState {
-  data: {
-    Title: string;
-    Year: string;
+  cart: {
+    title: string;
+    year: string;
     imdbID: string;
-    Type: string;
-    Poster: string;
+    type: string;
+    poster: string;
+    price: number;
   }[];
 }
 
 const initialState: MovieState = {
-  data: [],
+  cart: [],
 };
 
 export const movieSlice = createSlice({
   name: "movie",
   initialState,
   reducers: {
-    setMovieData: (state, action) => {
-        const movieArr = state.data;
-        
-        const newMovieArr = movieArr.concat(action.payload);
+    setCart: (state, action) => {
+        const obj = action.payload
+        const arrCart = state.cart
 
-        console.log(action.payload)
+        if (!arrCart.find((item) => item.imdbID === obj.imdbID)) {
+            arrCart.push(obj)
+        }
 
-        state.data = newMovieArr;
+        state.cart = arrCart
     }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setMovieData } = movieSlice.actions;
+export const { setCart } = movieSlice.actions;
 
 export default movieSlice.reducer;
