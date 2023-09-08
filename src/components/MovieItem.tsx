@@ -31,17 +31,17 @@ const MovieItem: FC<Props> = ({ data }) => {
   };
 
   const handleDeleteCartItem = () => {
-    dispatch(deleteCartItem(data))
+    dispatch(deleteCartItem(data.imdbID))
   }
 
   const handleLink = () => {
-    navigate(`/detail/${data.imdbID}`)
+    navigate(`/detail/${data.imdbID}/${data.price}`)
   }
 
   return (
     <div className="w-full shadow-xl rounded-xl bg-white relative group">
       <img
-        className="w-full rounded-xl object- h-[500px]"
+        className="w-full rounded-xl object-cover h-[300px]"
         src={`http://img.omdbapi.com/?apikey=1082ebc&i=${data.imdbID}`}
         alt={data.title}
       />
@@ -69,11 +69,11 @@ const MovieItem: FC<Props> = ({ data }) => {
         >
           <BsCartPlusFill className="text-slate-900" size={30} />
         </div>
-        <h3 onClick={handleLink} className="font-bold text-2xl text-white text-center hover:text-purple-800 cursor-pointer duration-200">
+        <h3 onClick={handleLink} className="font-bold text-lg text-white text-center hover:text-purple-800 cursor-pointer duration-200">
           {data.title} {`(${data.year})`}
         </h3>
         <div>
-          <h3 className="mt-4 font-bold text-3xl text-white text-center">
+          <h3 className="mt-2 font-bold text-xl text-white text-center">
             {convertRupiah(data.price)}
           </h3>
         </div>

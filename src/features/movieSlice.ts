@@ -34,9 +34,9 @@ export const movieSlice = createSlice({
         state.cart = arrCart
     },
     deleteCartItem: (state, action) => {
-      const obj: MoviesType = action.payload
+      const id = action.payload
       const arrCart = state.cart
-      const index = arrCart.findIndex((item) => item.imdbID === obj.imdbID)
+      const index = arrCart.findIndex((item) => item.imdbID === id)
       
       arrCart.splice(index, 1)
 
