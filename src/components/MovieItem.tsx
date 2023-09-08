@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { BsCartPlusFill, BsFillCartCheckFill, BsFillCartXFill } from "react-icons/bs";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { deleteCartItem, setCart } from "../features/movieSlice";

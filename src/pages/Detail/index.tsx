@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { deleteCartItem, setCart, setLoading } from "../../features/movieSlice";

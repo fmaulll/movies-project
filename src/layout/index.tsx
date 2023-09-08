@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { BsCartFill } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { convertRupiah } from "../helper";
