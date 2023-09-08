@@ -45,7 +45,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="p-8 bg-slate-900">
+    <div className="mt-32">
       <div className="grid grid-cols-5 gap-8">
         {movies.map((item, index) => (
           <MovieItem key={index} data={item} />
