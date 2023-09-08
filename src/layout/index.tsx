@@ -20,8 +20,8 @@ const Layout: FC<Props> = ({ children }) => {
   }
 
   return (
-    <div className="px-8 pb-8 bg-slate-900 h-screen overflow-y-scroll relative">
-      <div className="h-[100px] fixed w-full bg-black left-0 z-20 px-8 flex items-center justify-between">
+    <div className="px-[300px] pb-8 bg-slate-900 h-screen overflow-y-scroll relative">
+      <div className="h-[100px] fixed w-full bg-black left-0 z-20 px-[300px] flex items-center justify-between">
         <h1 onClick={handleRouting} className="font-bold text-3xl text-white cursor-pointer">Movie</h1>
         <div className="px-4 py-2 bg-black border-4 rounded-xl mt-2 mr-2 shadow-xl cursor-pointer relative group">
           <BsCartFill className="text-white" size={25} />
