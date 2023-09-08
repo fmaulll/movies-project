@@ -12,6 +12,8 @@ import {
 } from "react-icons/bs";
 import { convertRupiah } from "../../helper";
 
+const apiKey = "1082ebc";
+
 const Detail = () => {
   const dispatch = useAppDispatch();
   const { id, p } = useParams();
@@ -70,7 +72,7 @@ const Detail = () => {
     dispatch(setLoading(true));
     try {
       const results = await axios.get(
-        `https://www.omdbapi.com/?i=${id}&apikey=1082ebc`
+        `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`
       );
 
       if (results.status === 200) {
