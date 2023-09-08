@@ -10,7 +10,6 @@ const apiKey = "1082ebc";
 
 function Home() {
   const dispatch = useAppDispatch();
-  const [search, setSearch] = useState<string>("movie");
   const [page, setPage] = useState<number>(1);
   const [movies, setMovies] = useState<MoviesType[]>([]);
   const [totalRow, setTotalRow] = useState<number>(0);
@@ -32,7 +31,7 @@ function Home() {
     dispatch(setLoading(true));
     try {
       const results = await axios.get(
-        `http://www.omdbapi.com/?apikey=${apiKey}&s=${search}&page=${page}`
+        `http://www.omdbapi.com/?apikey=${apiKey}&s=${"movie"}&page=${page}`
       );
 
       if (results.status === 200) {
